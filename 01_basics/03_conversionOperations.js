@@ -1,3 +1,5 @@
+// ************************ Conversions  ************************
+
 // Number
 let score = 23;
 // console.log(score, typeof score);
@@ -88,3 +90,57 @@ let someNumber = 123;
 
 let stringNumber = String(someNumber);
 // console.log(stringNumber, typeof stringNumber);
+
+// ************************ Operations  ************************
+
+let value = 45;
+// console.log(value, typeof value);
+
+let negValue = -value;
+// console.log(negValue, typeof negValue);
+
+// console.log(2 + 2);
+// console.log(2 - 2);
+// console.log(2 * 2);
+// console.log(2 / 2);
+// console.log(2 ** 2);
+// console.log(3 % 2);
+
+let firstName = "Ajay";
+let middleName = "B";
+let lastName = "Panigrahi";
+let fullName = firstName + " " + middleName + " " + lastName;
+// console.log(fullName);
+
+// console.log(firstName - lastName); // output => NaN
+
+// console.log("1" + 2); // output => 12
+// console.log(1 + "2"); // output => 12
+// console.log("1" + "2"); // output => 12
+// console.log("1" + 2 + 2); // output => 122
+// console.log(1 + 2 + "2"); // output => 32
+
+// console.log(2%3*4/3_4**5); // messy code
+// console.log(((2 % 3) * 4) / 3_4 ** 5); // readable code
+// always use parenthesis for operations like above
+
+// console.log(+true); // output => 1
+// console.log(-true); // output => -1
+// console.log(+false); // output => 0
+// console.log(-false); // output => -0
+// console.log(+""); // output => 0
+// console.log(-""); // output => -0
+
+let num1, num2, num3;
+num1 = num2 = num3 = 2 + 9;
+// console.log(num1, num2, num3); // not good
+// focus on code readability
+
+let gameCounter = 100;
+console.log(gameCounter);
+
+gameCounter++;
+console.log(gameCounter);
+
+++gameCounter;
+console.log(gameCounter);
