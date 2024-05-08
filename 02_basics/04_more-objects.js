@@ -70,3 +70,25 @@ const allUser = [
 
 // console.log(user2.hasOwnProperty("firstName"));
 // console.log(user2.hasOwnProperty("isStudent"));
+
+// Object de-structuring
+const sampleObject = {
+  firstName: "Ajay",
+  age: 20,
+};
+
+// console.log(sampleObject);
+
+// console.log(sampleObject.firstName);
+
+/*
+    instead of doing sampleObject.firstName again and again...
+    we will de-structure the object using the below syntax.
+    It's just a syntactical sugar!
+*/
+
+// const { firstName } = sampleObject;
+// console.log(firstName);
+
+const { firstName: naam } = sampleObject;
+console.log(naam);
