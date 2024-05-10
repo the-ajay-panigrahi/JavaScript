@@ -26,6 +26,7 @@ function sample() {
 //   return 1;
 // };
 
+// arrow function
 const value = () => {
   return 1;
 };
