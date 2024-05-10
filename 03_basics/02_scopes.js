@@ -19,6 +19,43 @@ if (true) {
 let sampleValue = 1;
 if (true) {
   let sampleValue = 2;
-  console.log(`Inner sample value - ${sampleValue}`);
+  // console.log(`Inner sample value - ${sampleValue}`);
 }
-console.log(`Outer sample value - ${sampleValue}`);
+// console.log(`Outer sample value - ${sampleValue}`);
+
+function one() {
+  const firstName = "Ajay";
+  function two() {
+    const lastName = "Panigrahi";
+    console.log(firstName);
+  }
+  // console.log(lastName);
+  two();
+}
+
+// one();
+
+if (true) {
+  const userName = "Ajay";
+  if (userName === "Ajay") {
+    const websiteName = "Stack Overflow";
+    // console.log(`${userName}'s ${websiteName}`);
+  }
+  // console.log(websiteName);
+}
+
+// console.log(userName);
+
+console.log(`Plus one value: ${addOne(5)}`);
+function addOne(num) {
+  return num + 1;
+}
+
+// code written below is related to hoisting concept
+// console.log(`Plus two value: ${addTwo(5)}`); // ReferenceError: Cannot access 'addTwo' before initialization
+
+// Function expression
+const addTwo = function (num) {
+  return num + 2;
+};
+console.log(`Plus two value: ${addTwo(5)}`);
