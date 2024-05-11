@@ -2,9 +2,9 @@ const a = 10;
 let b = 20;
 var c = 30;
 
-// console.log(`const: ${a}`);
-// console.log(`let: ${b}`);
-// console.log(`var: ${c}`);
+console.log(`const: ${a}`);
+console.log(`let: ${b}`);
+console.log(`var: ${c}`);
 
 // below if-else is block scoped and whatever we wrote outside is global scope.
 if (true) {
@@ -14,7 +14,7 @@ if (true) {
 }
 // console.log(`Inside - const: ${a1}`);
 // console.log(`Inside - let: ${b1}`);
-// console.log(`Inside - var: ${c1}`);
+console.log(`Inside - var: ${c1}`);
 
 let sampleValue = 1;
 if (true) {
