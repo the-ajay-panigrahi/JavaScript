@@ -9,13 +9,13 @@
 // ()()
 (function dataBaseConnection() {
   // Named IIFE
-  console.log(`DB CONNECTED - 1`);
+  console.log(`DataBase connected to server-1`);
 })();
 
-((firstName) => {
+((method) => {
   // Unnamed IIFE
-  console.log(`DB CONNECTED - 2 BY ${firstName.toUpperCase()}`);
-})("Ajay");
+  console.log(`DataBase connected to server-2 via ${method}`);
+})("JDBC");
 
 /*
  NOTE:-
