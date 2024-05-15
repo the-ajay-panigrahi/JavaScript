@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Learning</title>
+    <style>
+      body {
+        background-color: #000000;
+        color: #ffffff;
+        font-family: sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>DOCUMENT OBJECT MODEL</h1>
+    <h2>DOM Learning <span style="display: none">experiment</span></h2>
+    <h2>DOM Learning</h2>
+    <h2>DOM Learning</h2>
+    <h2>DOM Learning</h2>
+    <script>
+      // Selecting the element(various methods...by id,class,tag,query etc)
+      let sample = document.getElementsByTagName("h2");
+      //   console.log(sample);
+      console.log(sample[0].innerText);
+      console.log(sample[0].innerHTML);
+      console.log(sample[0].textContent);
+      console.log(sample, typeof sample);
+      let convertedSampleArray = Array.from(sample);
+      console.log(convertedSampleArray, typeof convertedSampleArray);
+      convertedSampleArray.forEach((h2) => {
+        h2.style.color = "gold";
+        h2.style.fontSize = "30px";
+        h2.style.backgroundColor = "steelBlue";
+        h2.style.borderRadius = "50px";
+        h2.style.padding = "10px";
+        h2.style.textAlign = "center";
+        h2.innerText = "Jai Shree Ram";
+      });
+      // remember Html collection and Nodelist are not arrays they are different
+      //  Html collection does not have forEach method but NodeList does.
+    </script>
+  </body>
+</html>
