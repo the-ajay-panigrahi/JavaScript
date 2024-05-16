@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+    <style>
+      body {
+        background-color: #1f1f1f;
+        color: #ffffff;
+        font-family: sans-serif;
+        font-size: 25px;
+      }
+    </style>
+  </head>
+  <body></body>
+  <script>
+    const divElement = document.createElement("div");
+    divElement.style.backgroundColor = "orange";
+    divElement.style.textAlign = "center";
+    divElement.style.padding = "10px";
+    divElement.style.margin = "10px";
+    divElement.style.borderRadius = "17px";
+    divElement.style.color = "#000000";
+    divElement.style.fontWeight = "bold";
+    divElement.className = "ajay";
+    divElement.id = "unique-" + Math.floor(Math.random() * 10 + 1);
+    divElement.setAttribute("title", "Jai Shree Ram");
+    // divElement.innerHTML = "RAM";
+    const addText = document.createTextNode("Radhe Krishna");
+    divElement.appendChild(addText);
+    document.body.appendChild(divElement);
+    console.log(divElement);
+  </script>
+</html>
