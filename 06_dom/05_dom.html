@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+    <style>
+      body {
+        background-color: #1f1f1f;
+        color: #ffffff;
+        font-family: sans-serif;
+        font-size: 25px;
+      }
+    </style>
+  </head>
+  <body></body>
+  <script>
+    const createAElement = (elementName, elementContent) => {
+      const newElement = document.createElement(elementName);
+      newElement.innerHTML = elementContent;
+      document.body.appendChild(newElement);
+    };
+    const createOptimizedElement = (elementName, elementContent) => {
+      const newElement = document.createElement(elementName);
+      // const addText = document.createTextNode(elementContent);
+      // newElement.appendChild(addText);
+      newElement.appendChild(document.createTextNode(elementContent));
+      document.body.appendChild(newElement);
+    };
+    createAElement("h1", "Ram");
+    createAElement("p", "Jai Shree Ram");
+    createAElement("pre", "Jai \nShree \nRam");
+    createOptimizedElement("h2", "Hare Krishna");
+
+    // Edit
+    const sample = document.querySelector("pre");
+
+    // sample.innerHTML = "Hanuman";
+
+    const myElement = document.createElement("code");
+    // myElement.appendChild(document.createTextNode("Hanuman"));
+
+    // myElement.textContent = "Radhe";
+
+    sample.replaceWith(myElement);
+
+    // More edit(practice)
+    const heading1 = document.querySelector("h1");
+    heading1.outerHTML = "<h1>Code...</h1>";
+    // Remove
+    const maya = document.querySelector("h2");
+    maya.remove();
+
+    const anotherElement = document.querySelector("h1");
+    anotherElement.remove();
+  </script>
+</html>
