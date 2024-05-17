@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  overflow-x: hidden;
+  width: 100vw;
+  min-height: 100vh;
+  background-color: #3f3f3f;
+  color: #ffffff;
+  text-align: center;
+}
+
+header {
+  background-color: black;
+  min-height: 10vh;
+  display: flex;
+  text-decoration: underline;
+  justify-content: center;
+  align-items: center;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  background-color: red;
+  gap: 10px;
+  min-height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section p {
+  font-size: 30px;
+}
+
+main,
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 40vh;
+  background-color: rgb(0, 98, 255);
+  gap: 30px;
+}
+
+h2 {
+  font-size: 50px;
+}
+input {
+  font-size: 30px;
+  border: none;
+  border-radius: 17px;
+  text-align: center;
+  padding: 5px;
+}
+
+button {
+  font-size: 25px;
+  background-color: yellow;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 50px;
+  font-weight: bolder;
+  transition: all 0.1s ease;
+}
+
+button:hover {
+  font-size: 30px;
+  background-color: rgb(255, 196, 0);
+  padding: 15px 27px;
+  transition: all 0.1s ease;
+  cursor: pointer;
+}
+
+div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 20vh;
+  background-color: rgba(11, 235, 11, 0.929);
+  gap: 10px;
+}
+
+div p {
+  font-size: 30px;
+}
+
+footer {
+  background-color: black;
+  min-height: 10vh;
+  display: flex;
+  text-decoration: underline;
+  justify-content: center;
+  align-items: center;
+}
