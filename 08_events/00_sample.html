@@ -154,11 +154,47 @@
       document.getElementById("owl").addEventListener(
         "mouseover",
         function (eventObject) {
-          console.log(eventObject.toElement);
-          console.log(eventObject.target);
+          //   console.log(eventObject.toElement);
+          //   console.log(eventObject.target);
           //   console.log(eventObject.srcElement); // deprecated use eventObject.target instead.
         },
         false
+      );
+      /*
+          There are two ways/context of event propagation in the HTML DOM, event bubbling(false by default) and event capturing
+          */
+      //  event bubbling
+      //   document.querySelector("#images").addEventListener(
+      //     "click",
+      //     function (eventObject) {
+      //       console.log("clicked inside the ul");
+      //     },
+      //     false
+      //   );
+
+      //   document.querySelector("#owl").addEventListener(
+      //     "click",
+      //     function (eventObject) {
+      //       console.log("owl clicked");
+      //     },
+      //     false
+      //   );
+
+      // event capturing
+      document.querySelector("#images").addEventListener(
+        "click",
+        function (eventObject) {
+          console.log("clicked inside the ul");
+        },
+        true
+      );
+
+      document.querySelector("#owl").addEventListener(
+        "click",
+        function (eventObject) {
+          console.log("owl clicked");
+        },
+        true
       );
     </script>
   </body>
