@@ -92,7 +92,7 @@
           />
         </li>
         <li>
-          <a href="https://google.com" id="google">Google</a>
+          <a href="https://google.com" target="_blank" id="google">Google</a>
         </li>
       </ul>
     </div>
@@ -105,16 +105,61 @@
       //   };
 
       //   3rd parameter is false(default)
-      document.getElementById("owl").addEventListener(
+      //   document.getElementById("owl").addEventListener(
+      //     "click",
+      //     function (eventObject) {
+      //       alert("owl clicked");
+      //     },
+      //     false
+      //   );
+
+      // attachEvent() - used in early days
+      // jQuery - on
+
+      // event object
+      document.querySelector("#owl").addEventListener(
         "click",
         function (eventObject) {
-          alert("owl clicked");
+          //   console.log(eventObject);
         },
         false
       );
 
-      // attachEvent() - used in early times
-      // jQuery - on
+      // type, timestamp, preventDefault
+      // target, toElement, srcElement(deprecated), currentTarget,
+      // clientX, clientY, screenX, screenY
+      // altkey, ctrlkey, shiftkey, keyCode
+
+      document.querySelector("#owl").addEventListener(
+        "click",
+        function (eventObject) {
+          //   console.log(`Event Type - ${eventObject.type}`);
+          //   console.log(eventObject.target);
+          //   console.log(`Event TimeStamp - ${eventObject.timeStamp}`);
+          //   console.log(eventObject.target);
+        },
+        false
+      );
+
+      document.getElementById("google").addEventListener(
+        "click",
+        function (eventObject) {
+          //   eventObject.preventDefault();
+          //   console.log(`Event Prevent Default`);
+          //   console.log(eventObject.target);
+        },
+        false
+      );
+
+      document.getElementById("owl").addEventListener(
+        "mouseover",
+        function (eventObject) {
+          console.log(eventObject.toElement);
+          console.log(eventObject.target);
+          //   console.log(eventObject.srcElement); // deprecated use eventObject.target instead.
+        },
+        false
+      );
     </script>
   </body>
 </html>
