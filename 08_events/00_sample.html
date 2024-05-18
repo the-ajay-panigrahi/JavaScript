@@ -164,27 +164,29 @@
           There are two ways/context of event propagation in the HTML DOM, event bubbling(false by default) and event capturing
           */
       //  event bubbling
-      //   document.querySelector("#images").addEventListener(
-      //     "click",
-      //     function (eventObject) {
-      //       console.log("clicked inside the ul");
-      //     },
-      //     false
-      //   );
+      document.querySelector("#images").addEventListener(
+        "click",
+        function (eventObject) {
+          //   console.log("clicked inside the ul");
+        },
+        false
+      );
 
-      //   document.querySelector("#owl").addEventListener(
-      //     "click",
-      //     function (eventObject) {
-      //       console.log("owl clicked");
-      //     },
-      //     false
-      //   );
+      document.querySelector("#owl").addEventListener(
+        "click",
+        function (eventObject) {
+          //   console.log("owl clicked");
+          //   eventObject.stopPropagation();
+        },
+        false
+      );
 
       // event capturing
       document.querySelector("#images").addEventListener(
         "click",
         function (eventObject) {
-          console.log("clicked inside the ul");
+          //   console.log("clicked inside the ul");
+          //   eventObject.stopPropagation();
         },
         true
       );
@@ -192,9 +194,26 @@
       document.querySelector("#owl").addEventListener(
         "click",
         function (eventObject) {
-          console.log("owl clicked");
+          //   console.log("owl clicked");
         },
         true
+      );
+
+      document.querySelector("#images").addEventListener(
+        "click",
+        function (eventObject) {
+          console.log(eventObject.target.parentNode);
+          console.log(eventObject.target.tagName);
+          //   eventObject.target.parentNode.remove();
+          let removeIt = eventObject.target.parentNode;
+          if (eventObject.target.tagName === "IMG") {
+            removeIt.remove();
+          }
+
+          //   let removeIt = eventObject.target.parentNode;
+          //   removeIt.parentNode.removeChild(removeIt);
+        },
+        false
       );
     </script>
   </body>
