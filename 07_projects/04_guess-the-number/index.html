@@ -23,15 +23,25 @@
       <form>
         <h2>Guess a number</h2>
         <input type="text" placeholder="Enter your guess" />
-        <button type="submit">Submit Guess</button>
+        <div id="btns">
+          <button type="submit">Submit Guess</button>
+          <a href="/"
+            ><button type="reset" onclick="startGame()">Restart</button></a
+          >
+        </div>
+        <div id="result"></div>
       </form>
     </main>
     <div>
-      <p>Previous Guesses:</p>
-      <p>Guesses Remaining:</p>
+      <p id="previous-guesses">Previous Guesses:</p>
+      <p id="remaining-guesses"></p>
     </div>
     <footer>
-      <p>Made by Ajay Panigrahi</p>
+      <a
+        href="https://github.com/the-ajay-panigrahi/JavaScript/tree/main/07_projects/04_guess-the-number"
+        target="_blank"
+        >Made by Ajay Panigrahi</a
+      >
     </footer>
     <script src="./index.js"></script>
   </body>
