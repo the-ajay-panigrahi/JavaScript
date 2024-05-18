@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        width: 100vw;
+        height: 100vh;
+        background-color: #6a5acd;
+        color: #ffffff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        font-family: sans-serif;
+        gap: 20px;
+        padding: 10px;
+      }
+      ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+      a {
+        color: #ffffff;
+        font-weight: bolder;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Amazing image</h2>
+    <div>
+      <ul id="images">
+        <li>
+          <img
+            width="250px"
+            id="photoshop"
+            src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt="photoshop"
+          />
+        </li>
+        <li>
+          <img
+            width="250px"
+            id="japan"
+            src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt=""
+          />
+        </li>
+        <li>
+          <img
+            width="250px"
+            id="river"
+            src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt=""
+          />
+        </li>
+        <li>
+          <!-- onClick() is not a feasible approach when you are writing code at a large scale -->
+          <!-- avoid this approach -->
+          <!-- Note in react this onclick approach is optimized for large scale production code  -->
+          <!-- <img
+            width="250px"
+            onclick="alert('owl clicked')"
+            ;
+            id="owl"
+            src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt=""
+          /> -->
+          <img
+            width="250px"
+            id="owl"
+            src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt=""
+          />
+        </li>
+        <li>
+          <img
+            width="250px"
+            id="prayer"
+            src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt=""
+          />
+        </li>
+        <li>
+          <a href="https://google.com" id="google">Google</a>
+        </li>
+      </ul>
+    </div>
+
+    <script>
+      // This approach offers fewer functionalities and might cause problems.
+      // Event listeners are a better option because they provide not only click functionality but also event propagation capabilities.
+      //   document.getElementById("owl").onclick = function () {
+      //     alert("owl clicked");
+      //   };
+
+      //   3rd parameter is false(default)
+      document.getElementById("owl").addEventListener(
+        "click",
+        function (eventObject) {
+          alert("owl clicked");
+        },
+        false
+      );
+
+      // attachEvent() - used in early times
+      // jQuery - on
+    </script>
+  </body>
+</html>
