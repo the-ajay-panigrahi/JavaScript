@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Async Js</title>
+  </head>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap");
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      padding: 10px;
+      background-color: #db3b3b;
+      color: #ffffff;
+      font-family: "Rubik", sans-serif;
+      text-align: center;
+    }
+    #stop {
+      padding: 8px 15px;
+      font-weight: bolder;
+      border: none;
+      border-radius: 17px;
+      margin-top: 10px;
+    }
+  </style>
+  <body>
+    <h1>Async Js</h1>
+    <button id="stop">Stop</button>
+    <script>
+      //   setTimeout(function () {
+      //     console.log("Ajay");
+      //   }, 1000);
+      //   setTimeout(sayAjay, 1000);
+
+      //   const sayAjay = function () {
+      //     console.log("Ajay");
+      //   };
+      //   setTimeout(sayAjay, 1000);
+
+      const changeText = function () {
+        document.querySelector("h1").innerText = "Asyncronous JavaScript";
+      };
+      const changeMe = setTimeout(changeText, 1500);
+      document.getElementById("stop").addEventListener(
+        "click",
+        function () {
+          clearTimeout(changeMe);
+          console.log("STOPPED");
+        },
+        false
+      );
+    </script>
+  </body>
+</html>
