@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Async Js</title>
+  </head>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap");
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      padding: 10px;
+      background-color: #000000;
+      color: #ffffff;
+      font-family: "Rubik", sans-serif;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    h1 {
+      font-size: 60px;
+    }
+
+    table {
+      border-collapse: collapse;
+    }
+    td,
+    th {
+      padding: 20px;
+      border: 2px solid white;
+      font-size: 30px;
+    }
+    div {
+      margin-top: 30px;
+    }
+  </style>
+  <body>
+    <h1>Press the key and watch magic</h1>
+    <div></div>
+    <script>
+      window.addEventListener(
+        "keydown",
+        function (eventObject) {
+          document.querySelector("div").innerHTML = `
+                <table>
+                    <tr>
+                    <th>Key</th>
+                    <th>Key Code</th>
+                    <th>Code</th>
+                    </tr>
+                    <tr>
+                    <td>${
+                      eventObject.keyCode === 32 ? "Space" : eventObject.key
+                    }</td>
+                    <td>${eventObject.keyCode}</td>
+                    <td>${eventObject.code}</td>
+                    </tr>
+                </table>
+                `;
+        },
+        false
+      );
+    </script>
+  </body>
+</html>
