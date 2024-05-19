@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Async Js</title>
+  </head>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap");
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      padding: 10px;
+      background-color: #db3b3b;
+      color: #ffffff;
+      font-family: "Rubik", sans-serif;
+      text-align: center;
+    }
+    button {
+      padding: 8px 15px;
+      font-weight: bolder;
+      border: none;
+      border-radius: 17px;
+      margin: 10px;
+    }
+  </style>
+  <body>
+    <h1>Async Js</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+    <script>
+      //   setInterval(function () {
+      //     console.log("Ajay");
+      //   }, 1000);
+
+      //   function printName() {
+      //     console.log("Ajay");
+      //   }
+      //   setInterval(printName, 1000);
+
+      //   function printName(name) {
+      //     console.log(name);
+      //   }
+      //   const reference = setInterval(printName, 1000, "Ram");
+
+      function print(randomNumber) {
+        console.log(`${randomNumber} - ${Math.floor(Math.random() * 100 + 1)}`);
+      }
+
+      let reference;
+
+      document.getElementById("start").addEventListener(
+        "click",
+        function (eventObject) {
+          reference = setInterval(print, 100, "random number");
+        },
+        false
+      );
+      document.getElementById("stop").addEventListener(
+        "click",
+        function (eventObject) {
+          clearInterval(reference);
+        },
+        false
+      );
+    </script>
+  </body>
+</html>
