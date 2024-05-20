@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>API</title>
+  </head>
+  <body>
+    <!-- 
+
+        An API (Application Programming Interface) is a messenger that lets two apps talk to each other and share information. An API is a common language between two systems (between frontend and backend). Basically, an API is a medium.
+
+        we have fetch() modern way(newer).
+        we have XMLHttpRequest() legacy way(older) => AJAX programming.
+
+        XMLHttpRequest: readyState property
+
+        Value	 State	                       Description
+        0	    UNSENT	     Client has been created. open() not called yet.
+        1	    SENT	                  open() has been called.
+        2	    RECEIVED    send() has been called, and headers and status are available.
+        3	    LOADING	         Downloading; responseText holds partial data.
+        4	    DONE	                  The operation is complete.
+
+     -->
+  </body>
+  <script>
+    // AJAX Request(not used much now a days) => XMLHttpRequest()
+    const requestUrl = "https://api.github.com/users/the-ajay-panigrahi";
+    const xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function () {
+      console.log(xhr.readyState);
+      if (xhr.readyState === 4) {
+        // console.log(this.responseText);
+        let data = this.responseText;
+        // console.log(typeof data); // type => string
+        data = JSON.parse(data);
+        // console.log(typeof data); // type => object
+        console.log(data);
+        console.log(data.following);
+      }
+    };
+    xhr.open("GET", requestUrl);
+    xhr.send();
+  </script>
+</html>
