@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Api Project</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        height: 100vh;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #3f3f3f;
+        color: #ffffff;
+        font-family: "Rubik", sans-serif;
+        padding: 30px;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #555050;
+        border-radius: 30px;
+        max-width: 250px;
+      }
+
+      .userPhoto {
+        /* width: 250px; */
+        max-width: 250px;
+      }
+      .userPhoto img {
+        width: 100%;
+        border-radius: 30px;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+      }
+      .details {
+        padding: 5px 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      a {
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: bolder;
+        font-size: 14px;
+      }
+
+      button {
+        background-color: red;
+        border-radius: 17px;
+        border: none;
+        padding: 10px 25px;
+        margin-bottom: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="userPhoto">sample</div>
+      <div class="details">
+        <div class="userName">sample</div>
+        <span class="userFollowers">sample</span>
+        <span class="userFollowing">sample</span>
+        <div class="userAbout">sample</div>
+        <button>
+          <a href="https://api.github.com/users/hiteshchoudhary" target="_blank"
+            >Get More Info</a
+          >
+        </button>
+      </div>
+    </div>
+  </body>
+  <script>
+    let data;
+    const requestUrl = "https://api.github.com/users/hiteshchoudhary";
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", requestUrl);
+    xhr.send();
+
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState === 4 && xhr.status === 200) {
+        data = JSON.parse(this.responseText);
+        console.log(data);
+
+        const userPhoto = document.querySelector(".userPhoto");
+        const userName = document.querySelector(".userName");
+        const userFollowing = document.querySelector(".userFollowing");
+        const userFollowers = document.querySelector(".userFollowers");
+        const userAbout = document.querySelector(".userAbout");
+
+        userPhoto.innerHTML = `<img src="${data.avatar_url}" alt="user photo">`;
+        userName.innerHTML = `      <p>${data.name}</p>`;
+        userFollowers.innerHTML = `<p>Followers - ${data.followers}</p>`;
+        userFollowing.innerHTML = `<p>Following - ${data.following}</p>`;
+        userAbout.innerHTML = `<p>About me: </br>${data.bio}</p>`;
+      }
+    };
+  </script>
+</html>
