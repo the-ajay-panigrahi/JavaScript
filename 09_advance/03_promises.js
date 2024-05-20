@@ -1,3 +1,23 @@
+/*
+
+      A promise is an object that says the completion/failure of an asyncrounous operation/task.
+
+      promise has three states:
+                1) pending - initial state, neither fulfilled nor rejected.
+                2) fulfilled/resolved - meaning that the operation was completed successfully.
+                3) rejected - meaning that the operation failed.
+
+      .then() and .catch() are methods associated with promises.
+      .then() handles the resolved value.
+      .catch() handles the rejected value.
+
+     async/await is a syntactic sugar for writing asynchronous code in a more synchronous-looking style.
+
+     async function declares a function that can perform asynchronous operations and ultimately returns a promise.
+
+     await is used to pause execution until a promise is resolved.
+     
+*/
 const promiseOne = new Promise(function (resolve, reject) {
   /*
     Do an async task
