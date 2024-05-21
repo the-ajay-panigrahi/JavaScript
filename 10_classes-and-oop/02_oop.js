@@ -36,11 +36,3 @@ const userTwo = new allUser(173, 65, "Offline");
 
 console.log(userOne instanceof allUser);
 console.log(userOne instanceof Object);
-
-/*
-new keyword:
- - whenever you use new keyword an empty object is created which is called instance.
- - an constructor function is called due to new keyword internally.
- - this keyword injects all the arguments in these.
- - and finally we get all the values inside the object
- */
