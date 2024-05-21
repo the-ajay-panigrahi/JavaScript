@@ -34,5 +34,11 @@ const userTwo = new allUser(173, 65, "Offline");
 
 // console.log(userOne.constructor);
 
-console.log(userOne instanceof allUser);
-console.log(userOne instanceof Object);
+// console.log(userOne instanceof allUser);
+// console.log(userOne instanceof Object);
+
+// const userThree = allUser(100, 55, "Online");
+// console.log(userThree instanceof allUser);
+
+const userThree = new allUser(100, 55, "Online");
+console.log(userThree instanceof allUser);
