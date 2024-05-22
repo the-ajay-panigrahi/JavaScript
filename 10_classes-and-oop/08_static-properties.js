@@ -1,4 +1,4 @@
-class user {
+class User {
   constructor(userName) {
     this.userName = userName;
   }
@@ -10,19 +10,19 @@ class user {
   }
 }
 
-const student = new user("Ajay");
+const student = new User("Ajay");
 console.log(student);
 student.logMe();
 // student.userId();
 
-class teacher extends user {
+class Teacher extends User {
   constructor(teacherName, email) {
     super(teacherName);
     this.email = email;
   }
 }
 
-const instructor = new teacher("Hitesh", "hitesh@chai.com");
+const instructor = new Teacher("Hitesh", "hitesh@chai.com");
 console.log(instructor);
 instructor.logMe();
 // instructor.userId();

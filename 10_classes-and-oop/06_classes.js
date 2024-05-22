@@ -1,4 +1,4 @@
-// class user {
+// class User {
 //   constructor(userName, userEmailId, userPassword) {
 //     this.userName = userName;
 //     this.userEmailId = userEmailId;
@@ -12,27 +12,27 @@
 //   }
 // }
 
-// const sample = new user("Arjun", "dhananjaya@gmail.com", "12345");
+// const sample = new User("Arjun", "dhananjaya@gmail.com", "12345");
 // console.log(sample);
 // console.log(sample.encryptPassword());
 // console.log(sample.capitalizeUserName());
 
 // behind the scenes
-function user(userName, userEmailId, userPassword) {
+function User(userName, userEmailId, userPassword) {
   this.userName = userName;
   this.userEmailId = userEmailId;
   this.userPassword = userPassword;
 }
 
-user.prototype.encryptPassword = function () {
+User.prototype.encryptPassword = function () {
   return `@${this.userPassword}@Ajay`;
 };
 
-user.prototype.capitalizeUserName = function () {
+User.prototype.capitalizeUserName = function () {
   return `${this.userName.toUpperCase()}`;
 };
 
-const sample = new user("Arjun", "dhananjaya@gmail.com", "12345");
-console.log(sample);
-console.log(sample.encryptPassword());
-console.log(sample.capitalizeUserName());
+const random = new User("Arjun", "dhananjaya@gmail.com", "12345");
+console.log(random);
+console.log(random.encryptPassword());
+console.log(random.capitalizeUserName());
