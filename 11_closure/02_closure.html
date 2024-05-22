@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Closure</title>
+  </head>
+  <body>
+    <button id="blue">Blue</button>
+    <button id="orange">Orange</button>
+  </body>
+  <script>
+    function outer() {
+      const firstName = "Ajay";
+      function inner() {
+        console.log(firstName);
+      }
+      return inner;
+    }
+
+    const value = outer();
+    value();
+  </script>
+  <script>
+    const clickHandler = function (color) {
+      function handleColor() {
+        document.body.style.backgroundColor = `${color}`;
+      }
+      return handleColor;
+    };
+
+    document
+      .getElementById("blue")
+      .addEventListener("click", clickHandler("blue"), false);
+    document
+      .getElementById("orange")
+      .addEventListener("click", clickHandler("orange"), false);
+  </script>
+</html>
