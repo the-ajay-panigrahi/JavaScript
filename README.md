@@ -7,6 +7,6 @@ I'll be throwing code snippets in here and tinkering with all sorts of concepts 
 **Just remember (but don't take this too seriously😉) :**
 > It's not a bug; it's an undocumented feature.  - Anonymous
 
-In other words, expect some quirky code and unforeseen adventures along the way.  This is all part of the learning process, right?     
+Feel free to explore and use anything you find helpful.
 
 Happy coding!
